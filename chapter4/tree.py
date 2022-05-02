@@ -1,4 +1,7 @@
 #Question 1
+import collections
+
+
 class graph:
     def __init__(self, gdict, left, right):
         if gdict is None:
@@ -33,6 +36,9 @@ class graph:
 #Question 2
 #idea is to find the root first then build left n right subtrees
     def arr_toBST(self, arr):
+        if not arr:
+            return None
+
         mid = len(arr) // 2
 
         root = self.gdict[arr[mid]]
@@ -41,5 +47,14 @@ class graph:
 
         return root
 
+#Question 3
+    def listDepth(root):
+        pass
+
+        
+
+
+
+        
 
         
