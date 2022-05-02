@@ -1,9 +1,11 @@
 #Question 1
 class graph:
-    def __init__(self, gdict):
+    def __init__(self, gdict, left, right):
         if gdict is None:
             gdict = {}
         self.gdict = gdict
+        self.left = left
+        self.right = right
 
     def addedge(self,vertex, edge):
         self.gdict[vertex].append(edge)
@@ -27,6 +29,17 @@ class graph:
 
             return path
         
+
+#Question 2
+#idea is to find the root first then build left n right subtrees
+    def arr_toBST(self, arr):
+        mid = len(arr) // 2
+
+        root = self.gdict[arr[mid]]
+        root.left = self.arr_toBST(arr[:mid])
+        root.right = self.arr_toBST(arr[mid+1:])
+
+        return root
 
 
         
